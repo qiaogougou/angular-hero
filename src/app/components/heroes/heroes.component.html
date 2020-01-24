@@ -1,0 +1,33 @@
+
+<!-- 主从组件，导入hero detail，
+    []是 angular 属性绑定，单项数据绑定 -->
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail>  -->
+
+<h2>My Heroes</h2>
+
+<div>
+    <label>Hero name:
+      <input #heroName />
+    </label>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
+
+<ul class="heroes">
+    <!-- ngFor 循环数据
+    click 事件
+    class 添加样式 -->
+    <!-- <li *ngFor="let hero of heroes" 
+        (click)="onSelect(hero)" 
+        [class.selected]="hero === selectedHero"
+    > -->
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{ hero.id }}</span>{{ hero.name }}
+        </a>
+        <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+    </li>
+</ul> 

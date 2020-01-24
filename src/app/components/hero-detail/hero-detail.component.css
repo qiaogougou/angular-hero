@@ -1,0 +1,48 @@
+/* 只对当前容器有效果 */
+:host {
+  display: block;
+  border: 3px solid #607D8B;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* 只对当前容器有效果 在父窗口中调用 class="active" 时生效 */
+:host(.active) {
+  border-color: rgb(235, 188, 128);
+}
+/* 父容器有.theme-light 这个样式的时候才启用H2标签样式 */
+:host-context(.theme-light) h2 {
+  background-color: rgb(106, 106, 226);
+}
+
+/* HeroDetailComponent's private CSS styles */
+label {
+    display: inline-block;
+    width: 3em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+  }
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  button {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }

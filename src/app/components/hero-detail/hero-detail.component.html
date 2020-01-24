@@ -1,0 +1,27 @@
+<!-- selectedHero 最开始没有初始化后台会报错， 所以要用 *ngIf -->
+<div *ngIf="hero">
+    <h2>
+        {{ hero.name | lowercase | uppercase }} Details
+    </h2>
+
+    <div>
+        <span>Id: </span>{{hero.id}}
+    </div>
+    <div>
+        <span>Name: </span>{{hero.name}}
+    </div>
+
+    <div>
+        <label>name: 
+            <!-- 
+                ngModel 属性 双向绑定 
+                placeholder: html5 新增的属性，背景提示文字
+            -->
+            <input [(ngModel)]="hero.name" 
+                    placeholder="name"> 
+        </label>
+    </div>
+    <button (click)="goBack()">Go Back</button>
+    <button (click)="save()">save</button>
+</div>
+<h2>test style</h2>
